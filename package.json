@@ -1,0 +1,24 @@
+{
+  "name": "wishes-express",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node dist/api",
+    "build": "rimraf dist && npx tsc",
+    "dev": "rimraf dist && npx tsc && node dist/api"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^20.4.2",
+    "typescript": "^5.1.6"
+  },
+  "dependencies": {
+    "@types/module-alias": "^2.0.1",
+    "module-alias": "^2.2.3",
+    "rimraf": "^5.0.1"
+  }
+}
