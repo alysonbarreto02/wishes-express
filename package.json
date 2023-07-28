@@ -7,18 +7,28 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node dist/api",
     "build": "rimraf dist && npx tsc",
-    "dev": "rimraf dist && npx tsc && node dist/api"
+    "dev": "rimraf dist && npx tsc && node dist/api",
+    "migration:generate": "typeorm-ts-node-commonjs -d ./src/config/data-source.ts migration:generate ./migrations/default",
+    "migration:run": "typeorm-ts-node-commonjs -d ./src/config/data-source.ts migration:run",
+    "migration:revert": "typeorm migration:revert -- -d ./src/config/data-source.ts"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/express": "^4.17.17",
     "@types/node": "^20.4.2",
+    "dotenv": "^16.3.1",
+    "ts-node": "^10.9.1",
     "typescript": "^5.1.6"
   },
   "dependencies": {
     "@types/module-alias": "^2.0.1",
+    "express": "^4.18.2",
     "module-alias": "^2.2.3",
-    "rimraf": "^5.0.1"
+    "pg": "^8.11.1",
+    "reflect-metadata": "^0.1.13",
+    "rimraf": "^5.0.1",
+    "typeorm": "^0.3.17"
   }
 }
