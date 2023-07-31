@@ -1,13 +1,13 @@
 import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
-@Entity("subjects")
-export class Subject {
+@Entity("Teste")
+export class Teste {
   @PrimaryGeneratedColumn()
   id: number;
 
   @Column({ type: "text" })
-  name: string;
+  teste: string;
 
-  @Column({ type: "text" })
-  outro: string;
+  @Column({ type: "boolean" })
+  verdadeiro: boolean;
 }

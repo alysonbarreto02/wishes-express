@@ -8,9 +8,9 @@
     "start": "node dist/api",
     "build": "rimraf dist && npx tsc",
     "dev": "rimraf dist && npx tsc && node dist/api",
-    "migration:generate": "typeorm-ts-node-commonjs -d ./src/config/data-source.ts migration:generate ./migrations/default",
-    "migration:run": "typeorm-ts-node-commonjs -d ./src/config/data-source.ts migration:run",
-    "migration:revert": "typeorm migration:revert -- -d ./src/config/data-source.ts"
+    "migration:generate": "rimraf dist && npx tsc && typeorm-ts-node-commonjs -d ./src/config/data-source.ts migration:generate ./src/migrations/default",
+    "migration:run": "rimraf dist && npx tsc && typeorm-ts-node-commonjs -d ./src/config/data-source.ts migration:run",
+    "migration:revert": "rimraf dist && npx tsc && typeorm migration:revert -d ./src/config/data-source.ts"
   },
   "keywords": [],
   "author": "",
