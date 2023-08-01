@@ -15,6 +15,9 @@ export class Combo {
   @Column({ type: "timestamp" })
   deleted_at: Date
 
+  @Column({ type: "jsonb" })
+  products_id: Array<string>
+
   @Column({ type: "decimal" })
   price: number
 }
