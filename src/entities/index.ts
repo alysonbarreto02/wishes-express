@@ -1,3 +1,4 @@
 import { Enterprise } from "@/entities/Enterprise"
+import { User } from "@/entities/User"
 
-export { Enterprise }
+export { Enterprise, User }

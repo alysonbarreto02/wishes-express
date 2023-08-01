@@ -1,3 +1,3 @@
-import { Enterprise } from "@/entities"
+import { Enterprise, User } from "@/entities"
 
-export const entities = [Enterprise]
+export const entities = [Enterprise, User]
