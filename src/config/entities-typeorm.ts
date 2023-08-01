@@ -1,4 +1,3 @@
-import {  Teste } from "@/entities";
+import { Teste } from "@/entities"
 
-export const entities = [Teste];
-
+export const entities = [Teste]

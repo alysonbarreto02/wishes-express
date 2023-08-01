@@ -1,13 +1,16 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, PrimaryGeneratedColumn } from "typeorm"
 
 @Entity("Teste")
 export class Teste {
   @PrimaryGeneratedColumn()
-  id: number;
+  id: number
 
   @Column({ type: "text" })
-  teste: string;
+  teste: string
 
   @Column({ type: "boolean" })
-  verdadeiro: boolean;
+  verdadeiro: boolean
+
+  @Column({ type: "boolean" })
+  verdadeir2o: boolean
 }

@@ -1,3 +1,3 @@
-import { Teste } from "@/entities/Teste";
+import { Teste } from "@/entities/Teste"
 
-export {Teste}
+export { Teste }

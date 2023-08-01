@@ -1,13 +1,13 @@
-import "dotenv/config";
-import "reflect-metadata";
-import "../config/module-alias";
+import "dotenv/config"
+import "reflect-metadata"
+import "../config/module-alias"
 
-import { DataSource } from "typeorm";
+import { DataSource } from "typeorm"
 
-import { entities } from "@/config/entities-typeorm";
+import { entities } from "@/config/entities-typeorm"
 
-const port = process.env.DB_PORT as number | undefined;
-console.log({__dirname})
+const port = process.env.DB_PORT as number | undefined
+console.log({ __dirname })
 export const AppDataSource = new DataSource({
   type: "postgres",
   host: process.env.DB_HOST,
@@ -16,5 +16,5 @@ export const AppDataSource = new DataSource({
   password: process.env.DB_PASS,
   database: process.env.DB_NAME,
   entities,
-  migrations: [`/home/alyson/projects/wishes-express/dist/migrations/*.{ts,js}`],
-});
+  migrations: [`/home/alyson/projects/wishes-express/dist/migrations/*.{ts,js}`]
+})
