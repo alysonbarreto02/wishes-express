@@ -1,7 +1,7 @@
 import { Column, Entity, Generated, PrimaryGeneratedColumn } from "typeorm"
 
-@Entity("orders")
-export class Order {
+@Entity("combos")
+export class Combo {
   @PrimaryGeneratedColumn()
   @Generated("uuid")
   id: string
@@ -16,11 +16,5 @@ export class Order {
   deleted_at: Date
 
   @Column({ type: "decimal" })
-  full_price: number
-
-  @Column({ type: "text" })
-  status: string
-
-  @Column({ type: "jsonb" })
-  products_id: Array<string>
+  price: number
 }
