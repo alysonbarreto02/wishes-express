@@ -7,7 +7,6 @@ import { DataSource } from "typeorm"
 import { entities } from "@/config/entities-typeorm"
 
 const port = process.env.DB_PORT as number | undefined
-console.log({ __dirname })
 export const AppDataSource = new DataSource({
   type: "postgres",
   host: process.env.DB_HOST,
