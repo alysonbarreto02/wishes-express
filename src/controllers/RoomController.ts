@@ -1,9 +1,22 @@
+import { Room } from "@/entities"
+import { RoomRepository } from "@/repositories"
 import { Request, Response } from "express"
 
 export class RoomController {
   async create(req: Request, res: Response) {
-    const { name } = req.body
+    const { name, description } = req.body
 
-    res.json({ name })
+    try {
+      const room = new Room()
+      room.name = name
+      room.description = description
+
+      const result = await RoomRepository.save(room)
+
+      res.status(201).json({ result })
+    } catch (error) {
+      console.log(error)
+      res.status(500).json("Erro na consulta do servidor")
+    }
   }
 }
