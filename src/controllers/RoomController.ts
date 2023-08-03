@@ -19,4 +19,15 @@ export class RoomController {
       res.status(500).json("Erro na consulta do servidor")
     }
   }
+
+  async list(_: Request, res: Response) {
+    try {
+      const result = await RoomRepository.find()
+
+      res.status(200).json({ result })
+    } catch (error) {
+      console.log(error)
+      res.status(500).json("Erro no servidor.")
+    }
+  }
 }
