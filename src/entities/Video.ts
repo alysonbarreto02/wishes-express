@@ -16,7 +16,7 @@ export class Video {
   title: string
 
   @Column({ type: "text" })
-  url: string
+  url: string;
 
   // @ManyToOne(() => Room, room => room.videos)
   // @JoinColumn({ name: "room_id" })
