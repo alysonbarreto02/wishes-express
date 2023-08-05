@@ -10,7 +10,14 @@
     "dev": "rimraf dist && npx tsc && node dist/api",
     "migration:generate": "rimraf dist && npx tsc && typeorm-ts-node-commonjs -d ./src/config/data-source.ts migration:generate ./src/migrations/default",
     "migration:run": "rimraf dist && npx tsc && typeorm-ts-node-commonjs -d ./src/config/data-source.ts migration:run",
-    "migration:revert": "rimraf dist && npx tsc && typeorm-ts-node-commonjs -d ./src/config/data-source.ts migration:revert"
+    "migration:revert": "rimraf dist && npx tsc && typeorm-ts-node-commonjs -d ./src/config/data-source.ts migration:revert",
+    "prepare": "husky install",
+    "prettier-format": "npx prettier . --write"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run prettier-format"
+    }
   },
   "keywords": [],
   "author": "",
@@ -19,6 +26,7 @@
     "@types/express": "^4.17.17",
     "@types/node": "^20.4.2",
     "dotenv": "^16.3.1",
+    "husky": "^8.0.3",
     "prettier": "3.0.0",
     "ts-node": "^10.9.1",
     "typescript": "^5.1.6"
