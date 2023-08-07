@@ -1,4 +1,3 @@
-// import { Enterprise, User, Product, Order, Combo } from "@/entities"
-import { Client } from "@/entities"
+import { Client, Restaurant } from "@/entities"
 
-export const entities = [Client]
+export const entities = [Client, Restaurant]
