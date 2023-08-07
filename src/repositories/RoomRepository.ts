@@ -1,4 +1,4 @@
 import { AppDataSource } from "@/config/data-source"
-import { Room } from "@/entities"
+// import { Room } from "@/entities"
 
-export const RoomRepository = AppDataSource.getRepository(Room)
+// export const RoomRepository = AppDataSource.getRepository()
