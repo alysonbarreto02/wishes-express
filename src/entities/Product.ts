@@ -2,16 +2,16 @@ import { Column, Entity, PrimaryGeneratedColumn } from "typeorm"
 
 @Entity("products")
 export class Product {
-  @PrimaryGeneratedColumn()
+  @Column({ type: "uuid", default: "uuid_generate_v4()" })
   id: number
 
-  @Column({ type: "timestamp with time zone" })
+  @Column({ type: "timestamp with time zone", default: () => "NOW()" })
   created_at: Date
 
-  @Column({ type: "timestamp with time zone" })
+  @Column({ type: "timestamp with time zone", default: () => "NOW()" })
   updated_at: Date
 
-  @Column({ type: "timestamp with time zone" })
+  @Column({ type: "timestamp with time zone", default: () => "NOW()" })
   deleted_at: Date
 
   @Column({ type: "text" })
