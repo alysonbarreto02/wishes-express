@@ -3,7 +3,7 @@ import { Column, Entity, PrimaryGeneratedColumn } from "typeorm"
 @Entity("combos")
 export class Combo {
   @PrimaryGeneratedColumn()
-  id: number
+  id: string
 
   @Column({ type: "timestamp with time zone", default: () => "NOW()" })
   created_at: Date

@@ -1,9 +1,10 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm"
+import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm"
+import { Product } from "@/entities/Product"
 
 @Entity("restaurants")
 export class Restaurant {
   @PrimaryGeneratedColumn()
-  id: number
+  id: string
 
   @Column({ type: "timestamp with time zone", default: () => "NOW()" })
   created_at: Date
@@ -37,4 +38,7 @@ export class Restaurant {
 
   @Column({ type: "text" })
   name_owner: string
+
+  @OneToMany(() => Product, product => product.products)
+  restaurant: string
 }
