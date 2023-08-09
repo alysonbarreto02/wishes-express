@@ -2,7 +2,7 @@ import { Column, Entity, PrimaryGeneratedColumn } from "typeorm"
 
 @Entity("orders")
 export class Order {
-  @PrimaryGeneratedColumn()
+  @PrimaryGeneratedColumn("uuid")
   id: string
 
   @Column({ type: "timestamp with time zone", default: () => "NOW()" })

@@ -2,7 +2,7 @@ import { Column, Entity, PrimaryGeneratedColumn } from "typeorm"
 
 @Entity("menu")
 export class Menu {
-  @PrimaryGeneratedColumn()
+  @PrimaryGeneratedColumn("uuid")
   id: string
 
   @Column({ type: "timestamp with time zone", default: () => "NOW()" })

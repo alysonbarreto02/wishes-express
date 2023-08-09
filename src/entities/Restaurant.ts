@@ -3,7 +3,7 @@ import { Product } from "@/entities/Product"
 
 @Entity("restaurants")
 export class Restaurant {
-  @PrimaryGeneratedColumn()
+  @PrimaryGeneratedColumn("uuid")
   id: string
 
   @Column({ type: "timestamp with time zone", default: () => "NOW()" })
