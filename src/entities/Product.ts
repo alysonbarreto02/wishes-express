@@ -1,7 +1,7 @@
 import {
   Column,
   Entity,
-  ManyToMany,
+  JoinColumn,
   ManyToOne,
   PrimaryGeneratedColumn
 } from "typeorm"
@@ -36,9 +36,10 @@ export class Product {
   @Column({ type: "text" })
   image: string
 
-  @Column({ type: "text" })
+  @Column()
   restaurant_id: string
 
-  @ManyToOne(() => Restaurant, restaurant => restaurant.restaurant)
-  products: string[]
+  @ManyToOne(() => Restaurant, restaurant => restaurant.products)
+  @JoinColumn({ name: "restaurant_id", referencedColumnName: "id" })
+  restaurant: Restaurant
 }

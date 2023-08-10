@@ -1,4 +1,10 @@
-import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm"
+import {
+  Column,
+  Entity,
+  JoinColumn,
+  OneToMany,
+  PrimaryGeneratedColumn
+} from "typeorm"
 import { Product } from "@/entities/Product"
 
 @Entity("restaurants")
@@ -39,6 +45,6 @@ export class Restaurant {
   @Column({ type: "text" })
   name_owner: string
 
-  @OneToMany(() => Product, product => product.products)
-  restaurant: string
+  @OneToMany(() => Product, product => product.restaurant)
+  products: Product[]
 }
