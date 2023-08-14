@@ -33,14 +33,8 @@ export class Restaurant {
   @Column({ type: "integer" })
   wishes_per_day: number
 
-  @Column({ type: "boolean" })
-  have_pc: boolean
-
   @Column({ type: "varchar", length: 20 })
-  owner_phone: string
-
-  @Column({ type: "text" })
-  owner_email: string
+  phone: string
 
   @Column({ type: "text" })
   name_owner: string
