@@ -1,3 +1,3 @@
-// import { RoomRepository } from "@/repositories/RoomRepository"
+import { RestaurantRepository } from "@/repositories/RestaurantRepository"
 
-export {}
+export { RestaurantRepository }
