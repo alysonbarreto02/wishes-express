@@ -14,6 +14,9 @@ export class Address {
   @Column({ type: "timestamp with time zone", default: () => "NOW()" })
   deleted_at: Date
 
+  @Column({ type: "numeric" })
+  CEP: string
+
   @Column({ type: "text" })
   road: string
 
