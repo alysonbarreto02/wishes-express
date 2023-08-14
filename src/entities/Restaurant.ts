@@ -39,6 +39,9 @@ export class Restaurant {
   @Column({ type: "text" })
   name_owner: string
 
+  @Column({ type: "numeric" })
+  cpf_cnpj: string
+
   @OneToMany(() => Product, product => product.restaurant)
   products: Product[]
 }
