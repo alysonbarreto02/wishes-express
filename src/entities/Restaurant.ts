@@ -3,9 +3,10 @@ import {
   Entity,
   JoinColumn,
   OneToMany,
+  OneToOne,
   PrimaryGeneratedColumn
 } from "typeorm"
-import { Product } from "@/entities/Product"
+import { Product, Address } from "@/entities"
 
 @Entity("restaurants")
 export class Restaurant {
@@ -41,6 +42,10 @@ export class Restaurant {
 
   @Column({ type: "numeric" })
   cpf_cnpj: string
+
+  @OneToOne(() => Address, address => address.restaurant)
+  @JoinColumn()
+  address: Address
 
   @OneToMany(() => Product, product => product.restaurant)
   products: Product[]

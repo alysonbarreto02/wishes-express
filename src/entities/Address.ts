@@ -1,4 +1,5 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm"
+import { Column, Entity, OneToOne, PrimaryGeneratedColumn } from "typeorm"
+import { Restaurant } from "./Restaurant"
 
 @Entity("adresses")
 export class Address {
@@ -15,7 +16,7 @@ export class Address {
   deleted_at: Date
 
   @Column({ type: "numeric" })
-  CEP: string
+  CEP: number
 
   @Column({ type: "text" })
   road: string
@@ -34,4 +35,7 @@ export class Address {
 
   @Column({ type: "text" })
   UF: string
+
+  @OneToOne(() => Restaurant, restaurant => restaurant.address)
+  restaurant: Restaurant
 }
