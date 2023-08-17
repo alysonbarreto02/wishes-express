@@ -1,10 +1,10 @@
 import "../config/module-alias"
 
-import routes from "@/routes"
+import express, { Application, NextFunction, Request, Response } from "express"
 
 import { AppDataSource } from "@/config/data-source"
-import express, { Application, NextFunction, Request, Response } from "express"
 import { AppError } from "@/errors/AppError"
+import routes from "@/routes"
 
 AppDataSource.initialize().then(() => {
   const app: Application = express()
