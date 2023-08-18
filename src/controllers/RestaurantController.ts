@@ -1,50 +1,26 @@
 import { RestaurantRepository } from "@/repositories"
-import { Address, Restaurant } from "@/entities"
 
-import { Request, Response } from "express"
-import { FindRestaurantByEmailService } from "@/services/Restaurant/FIndRestaurantByEmailService"
+import { NextFunction, Request, Response } from "express"
+import { CreateRestaurantService } from "@/services/Restaurant/CreateRestaurantService"
 
 export class RestaurantController {
-  async create(req: Request, res: Response) {
-    const { email } = req.body
-
+  async create(req: Request, res: Response, next: NextFunction) {
     try {
-      const result = await new FindRestaurantByEmailService().execute({ email })
-      // const address = new Address()
-      // address.CEP
-      // address.UF
-      // address.city
-      // address.complement
-      // address.neighborhood
-      // address.road
+      const { email } = req.body
 
-      // const restaurant = new Restaurant()
-
-      // restaurant.name = name
-      // restaurant.wishes_per_day = wishes
-      // restaurant.name_owner = ownerName
-      // restaurant.email = email
-      // restaurant.password = password
-      // restaurant.cpf_cnpj = cpfOrCnpj
-      // restaurant.address = address
-
-      // const result = await RestaurantRepository.save(restaurant)
+      const result = await new CreateRestaurantService().execute({
+        cpfOrCnpj: "asd",
+        email,
+        name: "name",
+        ownerName: "ownerName",
+        password: "password",
+        phone: "6523",
+        wishes: 2
+      })
 
       res.status(201).json({ result })
     } catch (error) {
-      console.log(error)
-      res.status(500).json("Erro na consulta do servidor")
-    }
-  }
-
-  async list(_: Request, res: Response) {
-    try {
-      const result = await RestaurantRepository.find()
-
-      res.status(200).json({ result })
-    } catch (error) {
-      console.log(error)
-      res.status(500).json("Erro no servidor.")
+      next(error)
     }
   }
 }

@@ -1,23 +1,17 @@
 import { NextFunction, Request, Response } from "express"
-import { AppError } from "@/errors/AppError"
+import { HttpException } from "@/errors/HttpException"
 
-export function ErrorMiddleware() {
-  return (
-    error: Error,
-    request: Request,
-    response: Response,
-    next: NextFunction
-  ) => {
-    if (error instanceof AppError) {
-      return response.status(error.statusCode).json({
-        status: "error",
-        message: error.message
-      })
-    }
+export function errorMiddleware(
+  err: HttpException,
+  req: Request,
+  res: Response,
+  next: NextFunction
+) {
+  const status: number = err.status ?? 500
+  const message: string = err.message ?? "Internal server error"
 
-    return response.status(500).json({
-      status: "error",
-      message: "Internal server error"
-    })
-  }
+  res.status(status).json({
+    status,
+    message
+  })
 }
