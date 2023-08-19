@@ -1,6 +1,6 @@
 import { AtributtesCreateRestaurantService } from "@/types/services/RestaurantTypes"
 import { RestaurantRepository } from "@/repositories"
-import { FindRestaurantByEmailService } from "./FIndRestaurantByEmailService"
+import { FindRestaurantByEmailService } from "@/services/Restaurant/FIndRestaurantByEmailService"
 import { HttpException } from "@/errors/HttpException"
 
 export class CreateRestaurantService {
