@@ -16,7 +16,7 @@ export class AddressController {
         UF
       })
 
-      res.status(201).json({ result })
+      res.status(201).json(result)
     } catch (e) {
       next(e)
     }

@@ -45,7 +45,7 @@ export class RestaurantController {
         address
       })
 
-      res.status(201).json({ result })
+      res.status(201).json(result)
     } catch (error) {
       next(error)
     }
