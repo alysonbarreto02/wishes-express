@@ -11,7 +11,8 @@ export class CreateRestaurantService {
     email,
     password,
     cpfOrCnpj,
-    phone
+    phone,
+    address
   }: AtributtesCreateRestaurantService) {
     const foundRestaurant = await new FindRestaurantByEmailService().execute({
       email
@@ -31,7 +32,8 @@ export class CreateRestaurantService {
       name,
       wishes_per_day: wishes,
       name_owner: ownerName,
-      phone
+      phone,
+      address
     })
   }
 }

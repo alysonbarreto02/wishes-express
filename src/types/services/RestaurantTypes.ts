@@ -1,3 +1,5 @@
+import { Address } from "@/entities"
+
 export interface AtributtesCreateRestaurantService {
   name: string
   wishes: number
@@ -6,4 +8,5 @@ export interface AtributtesCreateRestaurantService {
   password: string
   cpfOrCnpj: string
   phone: string
+  address: Address
 }
