@@ -1,5 +1,3 @@
-import { RestaurantRepository } from "@/repositories"
-
 import { NextFunction, Request, Response } from "express"
 import { CreateRestaurantService } from "@/services/Restaurant/CreateRestaurantService"
 import { CreateAddressService } from "@/services/Address/CreateAddressService"
@@ -10,7 +8,6 @@ export class RestaurantController {
       const {
         email,
         cpfOrCnpj,
-        name,
         ownerName,
         password,
         phone,

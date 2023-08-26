@@ -25,7 +25,7 @@ export class CreateRestaurantService {
       })
     }
 
-    RestaurantRepository.create({
+    const restaurant = RestaurantRepository.create({
       cpf_cnpj: cpfOrCnpj,
       email,
       password,
@@ -35,5 +35,9 @@ export class CreateRestaurantService {
       phone,
       address
     })
+
+    const result = RestaurantRepository.save(restaurant)
+
+    return result
   }
 }
